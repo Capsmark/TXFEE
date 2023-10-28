@@ -1,7 +1,8 @@
 import pandas as pd
 
 # List of file paths for the 4 CSV files
-file_paths = ["./csv/fees.csv", "./csv/addresses-count.csv", "./csv/price-ohlcv.csv", "./csv/transactions-count.csv"]
+file_paths = ["./new/fees.csv", "./new/addresses-count.csv",
+              "./new/price-ohlcv.csv", "./new/transactions-count.csv"]
 
 # List to store the dataframes of each CSV file
 dataframes = []
@@ -17,4 +18,4 @@ merged_df = pd.merge(merged_df, dataframes[2], on="date", how="inner")
 merged_df = pd.merge(merged_df, dataframes[3], on="date", how="inner")
 
 # Save the merged dataframe to a new CSV file
-merged_df.to_csv("merged_data_Aug_02.csv", index=False)
+merged_df.to_csv("new/merged.csv", index=False)
